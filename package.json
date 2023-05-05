@@ -1,4 +1,13 @@
 {
+  "name": "GroupMe",
+  "version": "0.0.1",
+  "description": "A desktop app for GroupMe.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/ErikBoesen/GroupMe",
+  "author": "Erik Boesen",
   "dependencies": {
     "electron": "^24.2.0"
   }
