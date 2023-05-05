@@ -4,11 +4,15 @@
   "description": "A desktop app for GroupMe.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package-mac": "electron-packager . --platform=darwin --icon=images/logo/logo.icns --arch=all --out dist/ --overwrite",
+    "package-linux": "electron-packager . --platform=linux --icon=images/logo/logo.png --arch=all --out dist/ --overwrite",
+    "package-win": "electron-packager . --platform=win32 --icon=images/logo/logo.ico --arch=all --out dist/ --overwrite"
   },
   "repository": "https://github.com/ErikBoesen/GroupMe",
   "author": "Erik Boesen",
   "dependencies": {
-    "electron": "^24.2.0"
+    "electron": "^24.2.0",
+    "electron-packager": "^17.1.1"
   }
 }
