@@ -11,7 +11,12 @@ function createWindow () {
     },
   })
 
-  win.loadURL('https://web.groupme.com');
+  win.loadURL(
+      'https://web.groupme.com',
+      {
+          userAgent: 'Chrome',
+      },
+  );
 }
 
 app.whenReady().then(() => {
