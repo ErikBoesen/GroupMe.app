@@ -1,5 +1,5 @@
-const { app, BrowserWindow } = require('electron')
-const path = require('path')
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -10,29 +10,6 @@ function createWindow () {
       icon: path.join(__dirname, 'images/logo/logo.png'),
       partition: 'persist:infragistics',
     },
-  })
-
-  // Persist cookies
-  let cookies = win.webContents.session.cookies;
-  cookies.on('changed', function(event, cookie, cause, removed) {
-    if (cookie.session && !removed) {
-      let url = util.format('%s://%s%s', (!cookie.httpOnly && cookie.secure) ? 'https' : 'http', cookie.domain, cookie.path);
-      console.log('url', url);
-      cookies.set({
-        url: url,
-        name: cookie.name,
-        value: cookie.value,
-        domain: cookie.domain,
-        path: cookie.path,
-        secure: cookie.secure,
-        httpOnly: cookie.httpOnly,
-        expirationDate: new Date().setDate(new Date().getDate() + 14)
-      }, function(err) {
-        if (err) {
-          log.error('Error trying to persist cookie', err, cookie);
-        }
-      });
-    }
   });
 
   // Load webpage
@@ -45,7 +22,7 @@ function createWindow () {
 }
 
 app.whenReady().then(() => {
-  createWindow()
+  createWindow();
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
