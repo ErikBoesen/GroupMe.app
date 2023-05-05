@@ -3,14 +3,15 @@ const path = require('path')
 
 function createWindow () {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1000,
+    height: 800,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    }
+      preload: path.join(__dirname, 'preload.js'),
+      icon: path.join(__dirname, 'images/logo/logo.png'),
+    },
   })
 
-  win.loadFile('index.html')
+  win.loadURL('https://web.groupme.com');
 }
 
 app.whenReady().then(() => {
